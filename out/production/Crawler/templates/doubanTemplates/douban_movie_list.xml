@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+    <extract-url>
+        <location type="all">.nbg</location>
+        <location>.next a</location>
+    </extract-url>
+</body>

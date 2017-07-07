@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <!--<single-object>-->
+        <!--<cldao.doubanEntity.ReleasingMovieovie</class>-->
+        <!--<attributes>-->
+            <!--<attribute>-->
+                <!--<tag need="text">#content h1 span</tag>-->
+                <!--<acinemaNamename>movieName</acinemaNamename>-->
+            <!--</attribute>-->
+            <!--<attribute>-->
+                <!--<tag need="text">#info span:21</tag>-->
+                <!--<acinemaNamename>duration</acinemaNamename>-->
+            <!--</attribute>-->
+            <!--<attribute>-->
+                <!--<tag need="src">#mainpic a img</tag>-->
+                <!--<acinemaNamename>img</acinemaNamename>-->
+            <!--</attribute>-->
+            <!--<attribute>-->
+                <!--<tag need="text">#info span:12</tag>-->
+                <!--<acinemaNamename>region</acinemaNamename>-->
+            <!--</attribute>-->
+            <!--<attribute>-->
+                <!--<tag need="text">#info span:17</tag>-->
+                <!--<acinemaNamename>releaseTime</acinemaNamename>-->
+            <!--</attribute>-->
+            <!--<attribute>-->
+                <!--<tag need="text">#interest_sectl div.rating_wrap.clearbox div.rating_self.clearfix strong</tag>-->
+                <!--<acinemaNamename>score</acinemaNamename>-->
+            <!--</attribute>-->
+            <!--<attribute>-->
+                <!--<tag need="class">.rating-right div:1</tag>-->
+                <!--<acinemaNamename>star</acinemaNamename>-->
+            <!--</attribute>-->
+        <!--</attributes>-->
+    <!--</single-object>-->
+    <multi-objects>
+        <root-tag>#info span:1 .attrs</root-tag>
+        <single-object>
+            <class>dao.Director</class>
+            <attributes>
+                <attribute>
+                    <tag need="text">$ #content h1 span</tag>
+                    <attr-name>movie</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">a</tag>
+                    <attr-name>cinemaName</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <multi-objects>
+        <root-tag>#info .actor .attrs</root-tag>
+        <single-object>
+            <class>dao.Actor</class>
+            <attributes>
+                <attribute>
+                    <tag need="text">$ #content h1 span</tag>
+                    <attr-name>movie</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">span a</tag>
+                    <attr-name>cinemaName</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+</body>

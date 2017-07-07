@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <extract-url>
+        <location type="all">tr a</location>
+    </extract-url>
+</body>

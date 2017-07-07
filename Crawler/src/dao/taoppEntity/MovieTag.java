@@ -12,6 +12,11 @@ public class MovieTag implements Serializable{
     @Id
     private String tag;
 
+    public MovieTag(int movieId, String tag) {
+        this.movieId = movieId;
+        this.tag = tag;
+    }
+
     public int getMovieId() {
         return movieId;
     }

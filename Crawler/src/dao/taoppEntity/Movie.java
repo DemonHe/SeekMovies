@@ -1,9 +1,9 @@
 package dao.taoppEntity;
-import tools.DateUtil;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
@@ -30,7 +30,41 @@ public class Movie implements Serializable{
     private double score;
     @Column(name = "introduction")
     private String introduction;
+    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinColumn(name="movieId")
+    private Set<MovieActor> actorNames = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinColumn(name="movieId")
+    private Set<MovieTag> tags = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinColumn(name="movieId")
+    private Set<MovirDirector> directorNames = new HashSet<>();
 
+    public Movie(int movieId, String movieName, String region, String language, Date releaseDate, double during, String poster, double score, String introduction,
+                 String actorNames, String tags, String directorNames) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.region = region;
+        this.language = language;
+        this.releaseDate = releaseDate;
+        this.during = during;
+        this.poster = poster;
+        this.score = score;
+        this.introduction = introduction;
+
+        for(String a: actorNames.split(",")){
+            addActor(new MovieActor(movieId,a));
+        }
+
+        for(String t: tags.split(",")){
+            addTag(new MovieTag(movieId,t));
+        }
+
+        for(String d: directorNames.split(",")){
+            addDirector(new MovirDirector(movieId,d));
+        }
+
+    }
 
     public int getMovieId() {
         return movieId;
@@ -113,6 +147,39 @@ public class Movie implements Serializable{
     }
 
 
+    public Set<MovieActor> getActorNames() {
+        return actorNames;
+    }
 
+    public void setActorNames(Set<MovieActor> actorNames) {
+        this.actorNames = actorNames;
+    }
 
+    public void addActor(MovieActor actor){
+        actorNames.add(actor);
+    }
+
+    public Set<MovieTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<MovieTag> tags) {
+        this.tags = tags;
+    }
+
+    public void addTag(MovieTag tag){
+        tags.add(tag);
+    }
+
+    public Set<MovirDirector> getDirectorNames() {
+        return directorNames;
+    }
+
+    public void setDirectorNames(Set<MovirDirector> directorNames) {
+        this.directorNames = directorNames;
+    }
+
+    public void addDirector(MovirDirector directorName){
+        directorNames.add(directorName);
+    }
 }

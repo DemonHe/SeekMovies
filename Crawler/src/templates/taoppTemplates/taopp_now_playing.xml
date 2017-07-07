@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+
+    <single-object>
+        <class>dao.taoppEntity.Movie</class>
+        <attributes>
+            <attribute>
+                <tag need="text">.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-title</tag>
+                <attr-name>movieName</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="data-param">.schedule-wrap J_scheduleWrap schedule-loaded</tag>
+                <attr-name>movieId</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:4</tag>
+                <attr-name>region</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:5</tag>
+                <attr-name>language</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-time</tag>
+                <attr-name>releaseDate</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:6</tag>
+                <attr-name>during</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="src">.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-pic img</tag>
+                <attr-name>poster</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-title .score</tag>
+                <attr-name>score</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:7</tag>
+                <attr-name>introduction</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:1</tag>
+                <attr-name>directorNames</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:2</tag>
+                <attr-name>actorNames</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.detail-wrap J_detailWrap .detail-cont .center-wrap .cont-info li:3</tag>
+                <attr-name>tags</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+
+</body>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+    <complex-objects>
+        <root-tag>.movie_schedule</root-tag>
+        <class>dao.doubanEntity.MovieTicket</class>
+        <attributes>
+            <attribute>
+                <tag need="href">$ .sp-logo a.logo</tag>
+                <attr-name>cinemaId</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="id">$ .cover_list .now</tag>
+                <attr-name>movieId</attr-name>
+            </attribute>
+            <attribute>
+                <tag>div</tag>
+                <attr-name>price</attr-name>
+            </attribute>
+        </attributes>
+        <loop>
+            <root-tag>ul</root-tag>
+            <attributes>
+                <attribute>
+                    <tag>a</tag>
+                    <attr-name>time</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="href">a</tag>
+                    <attr-name>orderLink</attr-name>
+                </attribute>
+            </attributes>
+        </loop>
+    </complex-objects>
+
+    <single-object>
+        <class>dao.doubanEntity.Cinema</class>
+        <attributes>
+            <attribute>
+                <tag need="href">.sp-logo a.logo</tag>
+                <attr-name>cinemaId</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.sp-logo a.logo</tag>
+                <attr-name>cinemaName</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.bd>div</tag>
+                <attr-name>route</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.bd>div</tag>
+                <attr-name>address</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="href">.bd>div a</tag>
+                <attr-name>web</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+</body>

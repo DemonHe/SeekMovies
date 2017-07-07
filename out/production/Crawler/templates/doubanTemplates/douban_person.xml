@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+    <single-object>
+        <class>dao.doubanEntity.Actor</class>
+        <attributes>
+            <attribute>
+                <tag need="data-url">#opt-bar a</tag>
+                <attr-name>id</attr-name>
+            </attribute>
+            <attribute>
+                <tag>#content h1</tag>
+                <attr-name>actorName</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.info</tag>
+                <attr-name>sex</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.info</tag>
+                <attr-name>birthDay</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.info</tag>
+                <attr-name>homeLand</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="src">#headline img</tag>
+                <attr-name>headPic</attr-name>
+            </attribute>
+            <attribute>
+                <tag>span.hidden</tag>
+                <attr-name>introduce</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+</body>

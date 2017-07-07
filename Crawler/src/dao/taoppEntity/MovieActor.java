@@ -17,6 +17,11 @@ public class MovieActor implements Serializable{
     @Column(name = "actorName")
     private String actorName;
 
+    public MovieActor(int movieId, String actorName) {
+        this.movieId = movieId;
+        this.actorName = actorName;
+    }
+
     public int getMovieId() {
         return movieId;
     }

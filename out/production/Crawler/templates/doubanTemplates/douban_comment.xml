@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+    <multi-objects>
+        <root-tag>#comments</root-tag>
+        <single-object>
+            <class>dao.doubanEntity.Comment</class>
+            <attributes>
+                <attribute>
+                    <tag need="href">$ .aside a</tag>
+                    <attr-name>movieId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="title">.comment-time</tag>
+                    <attr-name>commentTime</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>.comment-info a:1</tag>
+                    <attr-name>commentator</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="title">.comment-info span:3</tag>
+                    <attr-name>commentLevel</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>p</tag>
+                    <attr-name>comment</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="data-cid">/</tag>
+                    <attr-name>cinemaId</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <!--<extract-url>-->
+        <!--<location>.next</location>-->
+    <!--</extract-url>-->
+</body>

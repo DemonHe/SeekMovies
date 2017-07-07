@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+    <single-object>
+        <class>dao.doubanEntity.Movie</class>
+        <attributes>
+            <attribute>
+                <tag>#content span:1</tag>
+                <attr-name>movieName</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="href">#mainpic a</tag>
+                <attr-name>movieId</attr-name>
+            </attribute>
+            <attribute>
+                <tag>#info</tag>
+                <attr-name>region</attr-name>
+            </attribute>
+            <attribute>
+                <tag>#info</tag>
+                <attr-name>language</attr-name>
+            </attribute>
+            <attribute>
+                <tag>#info span[property$=initialReleaseDate]:1</tag>
+                <attr-name>releaseDate</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="content">#info span[property$=runtime]:1</tag>
+                <attr-name>during</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="src">#mainpic img</tag>
+                <attr-name>poster</attr-name>
+            </attribute>
+            <attribute>
+                <tag>strong.rating_num</tag>
+                <attr-name>score</attr-name>
+            </attribute>
+            <attribute>
+                <tag>#link-report span:1</tag>
+                <attr-name>summary</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+    <single-object>
+        <class>dao.doubanEntity.MovieDirector</class>
+        <attributes>
+            <attribute>
+                <tag need="href">#info a[rel$=directedBy]</tag>
+                <attr-name>directorId</attr-name>
+            </attribute>
+            <attribute>
+                <tag>#info a[rel$=directedBy]</tag>
+                <attr-name>directorName</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="href">#mainpic a</tag>
+                <attr-name>movieId</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+    <multi-objects>
+        <root-tag>.actor .attrs</root-tag>
+        <single-object>
+            <class>dao.doubanEntity.MovieActor</class>
+            <attributes>
+                <attribute>
+                    <tag need="href">$ #mainpic a</tag>
+                    <attr-name>movieId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="href">a</tag>
+                    <attr-name>actorId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>a</tag>
+                    <attr-name>actorName</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <multi-objects>
+        <root-tag>#info</root-tag>
+        <single-object>
+            <class>dao.doubanEntity.MovieTag</class>
+            <attributes>
+                <attribute>
+                    <tag need="href">$ #mainpic a</tag>
+                    <attr-name>movieId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>[property$=genre]</tag>
+                    <attr-name>tag</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <extract-url>
+        <prefix>https://movie.douban.com</prefix>
+        <location type="all">.actor .attrs a[rel$=starring]</location>
+        <location type="all">#info a[rel$=directedBy]</location>
+    </extract-url>
+    <extract-url>
+        <location type="single">#comments-section .pl a</location>
+    </extract-url>
+</body>

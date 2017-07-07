@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <extract-url>
+        <prefix>http://www.dytt8.net</prefix>
+        <location type="all">.ulink</location>
+    </extract-url>
+    <extract-url>
+        <prefix>http://www.dytt8.net/html/gndy/dyzz/</prefix>
+        <location type="all">.x a</location>
+    </extract-url>
+</body>

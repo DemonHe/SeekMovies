@@ -1,0 +1,17 @@
+<!ELEMENT body ((single-object|multi-objects|complex-objects|extract-url)*)>
+<!ELEMENT single-object (class, attributes)>
+<!ELEMENT multi-objects (root-tag, single-object)>
+<!ELEMENT extract-url ( prefix?, paser_class?,location*)>
+<!ELEMENT class (#PCDATA)>
+<!ELEMENT attributes (attribute+)>
+<!ELEMENT attribute (tag, attr-name)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT attr-name (#PCDATA)>
+<!ATTLIST tag need CDATA "text">
+<!ELEMENT root-tag (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ATTLIST location type (single|all) "single">
+<!ELEMENT prefix (#PCDATA)>
+<!ELEMENT paser_class (#PCDATA)>
+<!ELEMENT complex-objects (root-tag, class, attributes?, loop?)>
+<!ELEMENT loop (root-tag, attributes?, loop?)>
