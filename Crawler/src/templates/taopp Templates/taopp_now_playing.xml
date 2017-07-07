@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "../dtd/parse.dtd">
+<body>
+    <multi-objects>
+        <root-tag>#nowplaying .lists</root-tag>
+        <single-object>
+            <class>dao.doubanEntity.ReleasingMovie</class>
+            <attributes>
+                <attribute>
+                    <tag need = "data-title">/</tag>
+                    <attr-name>movieName</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "data-score">/</tag>
+                    <attr-name>score</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "data-star">/</tag>
+                    <attr-name>star</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "data-release">/</tag>
+                    <attr-name>releaseTime</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "data-duration">/</tag>
+                    <attr-name>duration</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "data-region">/</tag>
+                    <attr-name>region</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "data-director">/</tag>
+                    <attr-name>director</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "src">.poster img</tag>
+                    <attr-name>img</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <multi-objects>
+        <root-tag>.tab_view>li:2 ul</root-tag>
+        <single-object>
+            <class>dao.doubanEntity.BoxOffice</class>
+            <attributes>
+                <attribute>
+                    <tag>a</tag>
+                    <attr-name>movieName</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>$ h1.movie_ranking_time span</tag>
+                    <attr-name>startTime</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>$ h1.movie_ranking_time span</tag>
+                    <attr-name>endTime</attr-name>
+                </attribute>
+                <attribute>
+                    <tag>p:2</tag>
+                    <attr-name>boxOffice</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <extract-url>
+        <location type="all">#nowplaying .sbtn a</location>
+    </extract-url>
+</body>
