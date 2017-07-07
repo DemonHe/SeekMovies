@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <multi-objects>
+        <root-tag>#cinema-list-wrap</root-tag>
+        <single-object>
+            <class>dao.Cinema</class>
+            <attributes>
+                <attribute>
+                    <tag need="data-movieId">/</tag>
+                    <attr-name>movieId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">h3</tag>
+                    <attr-name>cinemaName</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">.cinema-info span:1</tag>
+                    <attr-name>address</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="href">.cinema-info span:2 a</tag>
+                    <attr-name>web</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">$ #route-movieId</tag>
+                    <attr-name>route</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <multi-objects>
+        <root-tag>#cinema-list-wrap</root-tag>
+        <single-object>
+            <class>dao.Price</class>
+            <attributes>
+                <attribute>
+                    <tag need="data-movieId">/</tag>
+                    <attr-name>movieId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">$ #content h1</tag>
+                    <attr-name>movieName</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">span:1</tag>
+                    <attr-name>price</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    
+    <complex-objects>
+        <root-tag>#cinema-list-wrap</root-tag>
+        <class>dao.PriceDetail</class>
+        <attributes>
+            <attribute>
+                <tag need="data-movieId">/</tag>
+                <attr-name>movieId</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">$ #content h1</tag>
+                <attr-name>movieName</attr-name>
+            </attribute>
+        </attributes>
+        <loop>
+            <root-tag>.versions</root-tag>
+            <loop>
+                <root-tag>ul</root-tag>
+                <attributes>
+                    <attribute>
+                        <tag need="href">a</tag>
+                        <attr-name>orderLink</attr-name>
+                    </attribute>
+                    <attribute>
+                        <tag need="text">a</tag>
+                        <attr-name>time</attr-name>
+                    </attribute>
+                </attributes>
+            </loop>
+        </loop>
+    </complex-objects>
+    
+    <extract-url>
+        <location>#movie-subject-page a</location>
+    </extract-url>
+</body>

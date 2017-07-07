@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <single-object>
+        <class>dao.Movie</class>
+        <attributes>
+            <attribute>
+                <tag need="text">.subtitle</tag>
+                <attr-name>movie</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.content p:4</tag>
+                <attr-name>region</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.content p:4</tag>
+                <attr-name>during</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.content p:4</tag>
+                <attr-name>releaseTime</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.record span:2</tag>
+                <attr-name>score</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.content p:5</tag>
+                <attr-name>introduce</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="src">.poster img</tag>
+                <attr-name>img</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+    <extract-url>
+        <prefix>http://dianying.nuomi.com/</prefix>
+        <paser_class>impls.parser.extractor.NuoMiParser2</paser_class>
+        <location type="all">.recommend li .img</location>
+    </extract-url>
+</body>

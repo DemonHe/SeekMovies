@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <single-object>
+        <class>dao.Cinema</class>
+        <attributes>
+            <attribute>
+                <tag need="text">.sp-logo a</tag>
+                <attr-name>cinemaName</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.main-hd a:1</tag>
+                <attr-name>reviewer</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.main-hd a:2</tag>
+                <attr-name>target</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.main-hd span:3</tag>
+                <attr-name>level</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">.main-hd span:4</tag>
+                <attr-name>date</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">#link-report .review-content</tag>
+                <attr-name>content</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+</body>

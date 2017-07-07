@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mappings SYSTEM "dtd/mapping.dtd">
+<mappings>
+    <mapping>
+        <url>https://movie.douban.com/subject/[0-9]*/cinema/[a-z]*/</url>
+        <template>src/templates/doubanTemplates/douban_cinema_site.xml</template>
+    </mapping>
+    <mapping>
+        <url>https://movie.douban.com/subject/[0-9]*/comments</url>
+        <template>src/templates/doubanTemplates/douban_comment.xml</template>
+    </mapping>
+    <mapping>
+        <url>https://movie.douban.com/tag/*</url>
+        <template>src/templates/doubanTemplates/douban_movie_list.xml</template>
+    </mapping>
+    <mapping>
+        <url>https://movie.douban.com/subject/[0-9]*/</url>
+        <template>src/templates/doubanTemplates/douban_movie_info.xml</template>
+    </mapping>
+    <mapping>
+        <url>https://movie.douban.com/celebrity/[0-9]*/</url>
+        <template>src/templates/doubanTemplates/douban_person.xml</template>
+    </mapping>
+    <mapping>
+        <url>https://movie.douban.com/cinema/nowplaying/</url>
+        <template>src/templates/doubanTemplates/douban_now_playing.xml</template>
+    </mapping>
+    <mapping>
+        <url>https://site.douban.com/[0-9]*/</url>
+        <template>src/templates/doubanTemplates/douban_ticket.xml</template>
+    </mapping>
+</mappings>

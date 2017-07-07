@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <multi-objects>
+        <root-tag>#cinema-list-wrap</root-tag>
+        <single-object>
+            <class>dao.Price</class>
+            <attributes>
+                <attribute>
+                    <tag need = "data-movieId">/</tag>
+                    <attr-name>cinemaId</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "text">.hd span</tag>
+                    <attr-name>price</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need = "text">.hd span</tag>
+                    <attr-name>price</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+</body>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <single-object>
+        <class>dao.MovieComment</class>
+        <attributes>
+            <attribute>
+                <tag need="text">.main-hd a:2</tag>
+                <attr-name>movie</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.main-hd span:4</tag>
+                <attr-name>time</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.main-hd span:3</tag>
+                <attr-name>score</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.review-content</tag>
+                <attr-name>comment</attr-name>
+            </attribute>
+            <attribute>
+                <tag>.main-hd span:1</tag>
+                <attr-name>username</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+
+    <extract-url>
+        <location>.total-reviews</location>
+    </extract-url>
+</body>

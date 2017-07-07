@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://118.89.114.30:3306/movie</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">0224</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+
+
+        <!--注解配置写到这里-->
+        <mapping class="dao.doubanEntity.ReleasingMovie"/>
+        <mapping class="dao.primaryKey.ReleaseMovieKey"/>
+        <mapping class="dao.MovieLink"/>
+        <mapping class="dao.ComingMovie"/>
+        <mapping class="dao.Rank"/>
+        <mapping class="dao.primaryKey.RankPK"/>
+        <mapping class="dao.Movie"/>
+        <mapping class="dao.Cinema"/>
+        <mapping class="dao.Price"/>
+        <mapping class="dao.primaryKey.PricePK"/>
+        <mapping class="dao.PriceDetail"/>
+        <mapping class="dao.primaryKey.PriceDetailPK"/>
+        <mapping class="dao.MovieComment"/>
+        <mapping class="dao.primaryKey.ReviewPK"/>
+        <mapping class="dao.primaryKey.ActorPK"/>
+        <mapping class="dao.primaryKey.DirectorPK"/>
+        <mapping class="dao.Actor"/>
+        <mapping class="dao.Director"/>
+
+
+        <!--豆瓣电影的实体bean-->
+        <mapping class="dao.doubanEntity.doubanPk.MovieActorPK"/>
+        <mapping class="dao.doubanEntity.doubanPk.MovieDirectorPK"/>
+        <mapping class="dao.doubanEntity.doubanPk.MovieTagPK"/>
+        <mapping class="dao.doubanEntity.doubanPk.MovieTicketPK"/>
+
+        <mapping class="dao.doubanEntity.Movie"/>
+        <mapping class="dao.doubanEntity.MovieActor"/>
+        <mapping class="dao.doubanEntity.MovieDirector"/>
+        <mapping class="dao.doubanEntity.MovieTag"/>
+        <mapping class="dao.doubanEntity.Actor"/>
+        <mapping class="dao.doubanEntity.Comment"/>
+        <mapping class="dao.doubanEntity.BoxOffice"/>
+        <mapping class="dao.doubanEntity.MovieTicket"/>
+        <mapping class="dao.doubanEntity.Cinema"/>
+    </session-factory>
+</hibernate-configuration>

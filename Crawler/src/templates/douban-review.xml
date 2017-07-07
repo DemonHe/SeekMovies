@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <!--<multi-objects>-->
+        <!--<root-tag>.review-list</root-tag>-->
+        <!--<single-object>-->
+            <!--<class>dao.MovieComment</class>-->
+            <!--<attributes>-->
+                <!--<attribute>-->
+                    <!--<tag need="text">.main-meta</tag>-->
+                    <!--<acinemaNamename>time</acinemaNamename>-->
+                <!--</attribute>-->
+                <!--<attribute>-->
+                    <!--<tag need="text">.subject-title</tag>-->
+                    <!--<acinemaNamename>movie</acinemaNamename>-->
+                <!--</attribute>-->
+                <!--<attribute>-->
+                    <!--<tag need="text">.author span</tag>-->
+                    <!--<acinemaNamename>username</acinemaNamename>-->
+                <!--</attribute>-->
+                <!--<attribute>-->
+                    <!--<tag need="text">.main-title-hide</tag>-->
+                    <!--<acinemaNamename>score</acinemaNamename>-->
+                <!--</attribute>-->
+                <!--<attribute>-->
+                    <!--<tag need="text">.short-content</tag>-->
+                    <!--<acinemaNamename>comment</acinemaNamename>-->
+                <!--</attribute>-->
+            <!--</attributes>-->
+        <!--</single-object>-->
+    <!--</multi-objects>-->
+    <extract-url>
+        <location type="all">.title-link</location>
+    </extract-url>
+    <extract-url>
+        <prefix>https://movie.douban.com</prefix>
+        <!--<location type="all">.paginator a</location>-->
+        <location type="single">.next a</location>
+    </extract-url>
+</body>

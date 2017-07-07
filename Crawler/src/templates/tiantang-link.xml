@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <single-object>
+        <class>dao.MovieLink</class>
+        <attributes>
+            <attribute>
+                <tag need="text">.title_all h1</tag>
+                <attr-name>cinemaName</attr-name>
+            </attribute>
+            <attribute>
+                <tag need="text">#Zoom span table tbody tr td a</tag>
+                <attr-name>downloadLink</attr-name>
+            </attribute>
+        </attributes>
+    </single-object>
+</body>

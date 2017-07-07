@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE body SYSTEM "dtd/parse.dtd">
+<body>
+    <multi-objects>
+        <root-tag>#flexslider2 .slides</root-tag>
+        <single-object>
+            <class>dao.ComingMovie</class>
+            <attributes>
+                <attribute>
+                    <tag need="src">div img</tag>
+                    <attr-name>img</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">p:1</tag>
+                    <attr-name>movie</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+    <multi-objects>
+        <root-tag>#ranklist</root-tag>
+        <single-object>
+            <class>dao.Rank</class>
+            <attributes>
+                <attribute>
+                    <tag need="text">h3</tag>
+                    <attr-name>movie</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="text">em</tag>
+                    <attr-name>boxOffice</attr-name>
+                </attribute>
+                <attribute>
+                    <tag need="src">img</tag>
+                    <attr-name>img</attr-name>
+                </attribute>
+            </attributes>
+        </single-object>
+    </multi-objects>
+
+    <extract-url>
+        <prefix>http://dianying.nuomi.com/movie/detail?</prefix>
+        <paser_class>impls.parser.extractor.NuoMiParser</paser_class>
+        <location type="all">#flexslider2 .slides li .detail</location>
+        <location type="all">#flexslider1 .img</location>
+    </extract-url>
+</body>
