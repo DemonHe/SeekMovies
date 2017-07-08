@@ -1,7 +1,7 @@
 package impls.remote;
 
 import interfaces.UrlDatabase;
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.Ignore;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

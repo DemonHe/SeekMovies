@@ -2,12 +2,13 @@ package dao.taoppEntity.taoppPK;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 /**
  * Created by Administrator on 2017/7/7.
  */
 @Embeddable
-public class MovieActorPK {
+public class MovieActorPK implements Serializable {
     @Column(name = "movieId")
     private int movieId;
     @Column(name = "actorName")

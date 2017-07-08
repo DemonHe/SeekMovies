@@ -32,13 +32,16 @@ public class Movie implements Serializable{
     private double score;
     @Column(name = "introduction")
     private String introduction;
-    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+
+    @OneToMany(targetEntity=MovieActor.class,cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     @JoinColumn(name="movieId")
     private Set<MovieActor> actorNames = new HashSet<>();
-    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+
+    @OneToMany(targetEntity=MovieTag.class,cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     @JoinColumn(name="movieId")
     private Set<MovieTag> tags = new HashSet<>();
-    @OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+
+    @OneToMany(targetEntity=MovieDirector.class,cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     @JoinColumn(name="movieId")
     private Set<MovieDirector> directorNames = new HashSet<>();
 
@@ -62,6 +65,7 @@ public class Movie implements Serializable{
     }
 
     public void setMovieName(String movieName) {
+        movieName = movieName.split(" ")[0];
         this.movieName = movieName;
     }
 
@@ -117,7 +121,7 @@ public class Movie implements Serializable{
 
     public void setDuring(String during) {
         Pattern pattern = Pattern.compile("片长：[0-9]*分钟");
-        Matcher matcher = pattern.matcher(language);
+        Matcher matcher = pattern.matcher(during);
         if(matcher.find()){
             during = matcher.group().split("：")[1];
             during = during.replace("分钟","");
@@ -138,12 +142,16 @@ public class Movie implements Serializable{
     }
 
     public void setIntroduction(String introduction) {
-        Pattern pattern = Pattern.compile("剧情介绍：[\\u4e00-\\u9fa5]*");
-        Matcher matcher = pattern.matcher(language);
-        if(matcher.find()) {
-            introduction = matcher.group().split("：")[1];
-            this.introduction = introduction;
-        }
+        int index = introduction.indexOf("：");
+        introduction = introduction.substring(index+1);
+        this.introduction = introduction;
+//        System.out.println(introduction);
+//        Pattern pattern = Pattern.compile("剧情介绍：[\\u4e00-\\u9fa5]*");
+//        Matcher matcher = pattern.matcher(introduction);
+//        if(matcher.find()) {
+//            introduction = matcher.group().split("：")[1];
+//            this.introduction = introduction;
+//        }
     }
 
 
@@ -156,11 +164,16 @@ public class Movie implements Serializable{
 //    }
 
     public void setActorNames(String actorNames) {
+//        System.out.println(actorNames);
         Pattern pattern = Pattern.compile("主演：[\\u4e00-\\u9fa5]*");
-        Matcher matcher = pattern.matcher(language);
+        Matcher matcher = pattern.matcher(actorNames);
         if(matcher.find()) {
-            actorNames = matcher.group().split("：")[1];
+            int index = actorNames.indexOf("：");
+            actorNames = actorNames.substring(index+1);
+//            actorNames = matcher.group().split("：")[1];
+//            System.out.println(actorNames);
             for (String a : actorNames.split(",")) {
+//                System.out.println(a);
                 addActor(new MovieActor(movieId, a));
             }
         }
@@ -179,11 +192,16 @@ public class Movie implements Serializable{
 //    }
 
     public void setTags(String tags) {
+//        System.out.println(tags);
         Pattern pattern = Pattern.compile("类型：[\\u4e00-\\u9fa5]*");
-        Matcher matcher = pattern.matcher(language);
+        Matcher matcher = pattern.matcher(tags);
         if(matcher.find()) {
-            tags = matcher.group().split("：")[1];
+            int index = tags.indexOf("：");
+            tags = tags.substring(index+1);
+//            tags = matcher.group().split("：")[1];
+//            System.out.println(tags);
             for (String t : tags.split(" ")) {
+//                System.out.println(t);
                 addTag(new MovieTag(movieId, t));
             }
         }
@@ -202,11 +220,16 @@ public class Movie implements Serializable{
 //    }
 
     public void setDirectorNames(String directorNames) {
+//        System.out.println(directorNames);
         Pattern pattern = Pattern.compile("导演：[\\u4e00-\\u9fa5]*");
-        Matcher matcher = pattern.matcher(language);
+        Matcher matcher = pattern.matcher(directorNames);
         if(matcher.find()) {
-            directorNames = matcher.group().split("：")[1];
+            int index = directorNames.indexOf("：");
+            directorNames = directorNames.substring(index+1);
+//            directorNames = matcher.group().split("：")[1];
+//            System.out.println(directorNames);
             for (String d : directorNames.split(",")) {
+//                System.out.println(d);
                 addDirector(new MovieDirector(movieId, d));
             }
         }
@@ -214,5 +237,25 @@ public class Movie implements Serializable{
 
     public void addDirector(MovieDirector directorName){
         directorNames.add(directorName);
+    }
+
+    @Override
+    public String toString() {
+        String str =  "Movie{" +
+                "movieId=" + movieId +
+                ", movieName='" + movieName + '\'' +
+                ", region='" + region + '\'' +
+                ", language='" + language + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", during=" + during +
+                ", poster='" + poster + '\'' +
+                ", score=" + score +
+                ", introduction='" + introduction + '\'';
+        for(MovieDirector m:directorNames){
+            str+=m.toString();
+        }
+        str+=actorNames.toString();
+        str+=tags.toString();
+        return str;
     }
 }

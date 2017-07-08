@@ -1,11 +1,16 @@
 package dao.taoppEntity;
 
-import javax.persistence.Id;
+import dao.taoppEntity.taoppPK.MovieTagPK;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by Administrator on 2017/7/7.
  */
+@Entity
+@Table(name = "taopp_movie_tag")
+@IdClass(MovieTagPK.class)
 public class MovieTag implements Serializable{
     @Id
     private int movieId;

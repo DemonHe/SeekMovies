@@ -2,6 +2,6 @@
 <!DOCTYPE body SYSTEM "../dtd/parse.dtd">
 <body>
     <extract-url>
-        <location type="all">.movie-card</location>
+        <location type="all">.tab-content div:2 .movie-card</location>
     </extract-url>
 </body>

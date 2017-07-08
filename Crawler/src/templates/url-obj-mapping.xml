@@ -31,7 +31,7 @@
     </mapping>
 
     <mapping>
-        <url>https://dianying.taobao.com/showDetail.htm?showId=[0-9]*</url>
+        <url>https://dianying.taobao.com/showDetail.htm\?showId=[0-9]*</url>
         <template>src/templates/taoppTemplates/taopp_now_playing.xml</template>
     </mapping>
     <mapping>

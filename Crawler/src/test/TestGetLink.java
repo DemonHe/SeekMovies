@@ -16,7 +16,7 @@ public class TestGetLink {
     public void testLink(){
         HtmlDownLoaderImpl impl = new HtmlDownLoaderImpl();
         try {
-            String url = "http://www.dytt8.net/html/gndy/dyzz/20170528/54093.html";
+            String url = "https://dianying.taobao.com/showList.htm";
             HtmlParserImpl impl2 = new HtmlParserImpl();
             String page = impl.getHtmlPage(url);
             impl2.parseHtml(page,url);

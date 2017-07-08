@@ -49,5 +49,16 @@
         <mapping class="dao.doubanEntity.BoxOffice"/>
         <mapping class="dao.doubanEntity.MovieTicket"/>
         <mapping class="dao.doubanEntity.Cinema"/>
+
+        <!--淘票票的实体bean-->
+        <mapping class="dao.taoppEntity.taoppPK.MovieActorPK"/>
+        <mapping class="dao.taoppEntity.taoppPK.MovieDirectorPK"/>
+        <mapping class="dao.taoppEntity.taoppPK.MovieTagPK"/>
+
+        <mapping class="dao.taoppEntity.MovieActor"/>
+        <mapping class="dao.taoppEntity.MovieDirector"/>
+        <mapping class="dao.taoppEntity.MovieTag"/>
+        <mapping class="dao.taoppEntity.Movie"/>
+
     </session-factory>
 </hibernate-configuration>
