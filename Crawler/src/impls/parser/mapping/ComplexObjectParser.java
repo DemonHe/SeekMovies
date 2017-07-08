@@ -38,7 +38,7 @@ public class ComplexObjectParser extends AbstractObjectParser {
         List<Element> elements = getAllChildes(getElements(root[0], doc));
 
         for(Element element: elements){
-            parse(doc, element, 0, 0, new HashMap<>());
+            parse(doc, element, 0, 0, new HashMap<String,String>());
 
         }
     }

@@ -12,6 +12,10 @@ public class MovieTag implements Serializable{
     @Id
     private String tag;
 
+    public MovieTag(){
+
+    }
+
     public MovieTag(int movieId, String tag) {
         this.movieId = movieId;
         this.tag = tag;
@@ -21,11 +25,13 @@ public class MovieTag implements Serializable{
         return movieId;
     }
 
-    public void setMovieId(String movieId) {
-        String[] strings = movieId.split("&");
-        movieId = strings[1];
-        movieId = movieId.split("=")[1];
-        this.movieId = Integer.parseInt(movieId);
+    public void setMovieId(int movieId) {
+//        String[] strings = movieId.split("&");
+//        movieId = strings[1];
+//        movieId = movieId.split("=")[1];
+//        this.movieId = Integer.parseInt(movieId);
+        this.movieId = movieId;
+
     }
 
     public String getTag() {

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "taopp_movie_director")
 @IdClass(MovieDirectorPK.class)
-public class MovirDirector implements Serializable {
+public class MovieDirector implements Serializable {
     @Id
     private int movieId;
 
@@ -19,7 +19,11 @@ public class MovirDirector implements Serializable {
     @Column(name = "directorName")
     private String directorName;
 
-    public MovirDirector(int movieId, String directorName) {
+    public MovieDirector(){
+
+    }
+
+    public MovieDirector(int movieId, String directorName) {
         this.movieId = movieId;
         this.directorName = directorName;
     }
@@ -28,11 +32,12 @@ public class MovirDirector implements Serializable {
         return movieId;
     }
 
-    public void setMovieId(String movieId) {
-        String[] strings = movieId.split("&");
-        movieId = strings[1];
-        movieId = movieId.split("=")[1];
-        this.movieId = Integer.parseInt(movieId);
+    public void setMovieId(int movieId) {
+//        String[] strings = movieId.split("&");
+//        movieId = strings[1];
+//        movieId = movieId.split("=")[1];
+//        this.movieId = Integer.parseInt(movieId);
+        this.movieId = movieId;
     }
 
     public String getDirectorName() {

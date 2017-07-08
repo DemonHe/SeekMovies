@@ -22,14 +22,15 @@ public class TestHtmlParserImpl {
         try {
             HtmlParserImpl impl = new HtmlParserImpl();
 
-            File input = new File("C:/Users/douchengfeng/Desktop/异形：契约 在线购票&影讯.htm");
+            File input = new File("D:\\Homework\\Junior\\应用集成原理与工具\\神偷奶爸3 - 南京影讯、 影片简介、电影票网上预订、在线购票、兑换券、团购 - 淘票票.html");
             BufferedReader reader = new BufferedReader(new FileReader(input));
             StringBuilder html = new StringBuilder();
             String temp;
             while((temp = reader.readLine()) != null){
                 html.append(temp);
             }
-            impl.parseHtml(html.toString(), "https://movie.douban.com/subject/11803087/cinema/nanjing/?from=playing_btn");
+
+            System.out.print(impl.parseHtml(html.toString(), "https://dianying.taobao.com/showDetail.htm?showId=178416").toString());
             Thread.sleep(20000);
         } catch (DocumentException | IOException e) {
             e.printStackTrace();

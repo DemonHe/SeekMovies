@@ -17,6 +17,10 @@ public class MovieActor implements Serializable{
     @Column(name = "actorName")
     private String actorName;
 
+    public MovieActor(){
+
+    }
+
     public MovieActor(int movieId, String actorName) {
         this.movieId = movieId;
         this.actorName = actorName;
@@ -26,11 +30,12 @@ public class MovieActor implements Serializable{
         return movieId;
     }
 
-    public void setMovieId(String movieId) {
-        String[] strings = movieId.split("&");
-        movieId = strings[1];
-        movieId = movieId.split("=")[1];
-        this.movieId = Integer.parseInt(movieId);
+    public void setMovieId(int movieId) {
+//        String[] strings = movieId.split("&");
+//        movieId = strings[1];
+//        movieId = movieId.split("=")[1];
+//        this.movieId = Integer.parseInt(movieId);
+        this.movieId = movieId;
     }
 
     public String getActorName() {
